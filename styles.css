@@ -79,9 +79,9 @@ body{
   overflow: hidden;
 }
 
-.todoList li span{
+.todoList li .deleteTask{
   position: absolute;
-  right: -45px;
+  right: -90px;
   background: #E74C3C;
   width: 45px;
   color: #fff;
@@ -91,8 +91,23 @@ body{
   transition: all 0.3s ease;
 }
 
-.todoList li:hover span{
+.todoList li:hover span
+{
   right: 0;
+}
+
+.todoList li .toggleTask{
+  position: absolute;
+  right: -45px;
+  background: #28B463 ;
+  width: 45px;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.todoList li:hover .toggleTask{
+  right: 50px;
 }
 
 .wrapper .footer{

@@ -48,7 +48,11 @@ function showTasks () {
 
   let newLiTag = '';
   listArr.forEach((element,index) => {
-    newLiTag += `<li>${element}<span onclick= "deleteTask(${index})" ><i class="fas fa-trash"></i></span></li>`;
+    newLiTag += `<li>${element}
+    <span class="toggleTask" onclick="toggleTask(${index})"><i class="far fa-check-circle"></i></span>
+    <span class="deleteTask" onclick= "deleteTask(${index})" ><i class="fas fa-trash"></i></span>
+    </li>
+    `;
   });
   todoList.innerHTML = newLiTag;
   inputBox.value= "";
@@ -60,6 +64,10 @@ function deleteTask (index){
   listArr.splice(index, 1);
   localStorage.setItem("New Todo", JSON.stringify(listArr));
   showTasks();
+}
+
+function toggleTask(index){
+  console.log("working on", index);
 }
 
 deleteAllBtn.onclick = () => {
